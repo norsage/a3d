@@ -1,0 +1,38 @@
+model:
+  _target_: a3d.model.t5.TinyT5
+  paratope_coef: 2.0
+  t5_config:
+    _target_: transformers.models.t5.T5Config
+    vocab_size: 37
+    d_model: 128
+    d_kv: 64
+    d_ff: 128
+    num_layers: 3
+    num_decoder_layers: 3
+    num_heads: 4
+    relative_attention_num_buckets: 32
+    relative_attention_max_distance: 256
+    dropout_rate: 0.1
+    layer_norm_epsilon: 1.0e-06
+    initializer_factor: 1
+    feed_forward_proj: relu
+    is_encoder_decoder: true
+    use_cache: true
+    pad_token_id: 0
+    eos_token_id: 1
+    decoder_start_token_id: 5
+    min_length: 100
+    max_new_tokens: 250
+    num_beams: 8
+    do_sample: true
+    temperature: 1.0
+    top_p: 0.9
+  tokenizer:
+    _target_: a3d.datamodule.tokenizer.AminoAcidTokenizer
+    extra_id_prefix: ''
+  optimizer:
+    _target_: torch.optim.AdamW
+    _partial_: true
+    lr: 0.001
+    weight_decay: 0.0
+  lr_scheduler: null

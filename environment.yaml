@@ -1,0 +1,20 @@
+name: a3d
+channels:
+- pytorch
+- nvidia
+- conda-forge
+dependencies:
+- python>=3.10
+- pip
+- pytorch=2.0.0
+- pytorch-cuda=11.8
+- pip:
+  - pytorch-lightning==2.0.2
+  - transformers==4.29.2
+  - biopython==1.81
+  - scikit-learn==1.2.2
+  - pandas==2.0.1
+  - pyrootutils==1.0.4
+  - aim==3.17.4
+  - hydra-core==1.2.0
+  - bertviz==1.4.0

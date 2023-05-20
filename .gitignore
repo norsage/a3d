@@ -1,0 +1,11 @@
+/data/
+/logs/
+__pycache__
+.vscode
+.DS_Store
+/*.py
+/*.pdb
+/*.ipynb
+/*.txt
+/*.csv
+/*.pth
